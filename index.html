@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Giuli Web Studio</title>
+<meta name="description" content="Giuli Web Studio – Websites und Website-Verbesserungen für kleine Betriebe in Winterthur und Zürich. Schnell, persönlich, faire Preise.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root{--paper:#f3f5f2;--card:#ffffff;--ink:#14211c;--soft:#55665e;--line:#d5ddd8;--green:#1f6b4f;--mark:#ffd84d;--red:#c2412d;
+--f-display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;--f-body:"Figtree","Segoe UI",system-ui,sans-serif;--f-mono:"JetBrains Mono",ui-monospace,Consolas,monospace}
+@media (prefers-color-scheme:dark){:root{--paper:#0f1613;--card:#16201b;--ink:#e6eee9;--soft:#9cb0a6;--line:#2a3832;--green:#5cc79a;--mark:#e8c23a;--red:#f07a63;color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.6}
+.w{max-width:1100px;margin:0 auto;padding-left:16px;padding-right:16px}
+a{color:var(--green)}
+nav{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-block:22px;flex-wrap:wrap}
+.logo{font-family:var(--f-display);font-weight:800;font-size:22px;letter-spacing:-.02em}
+.logo span{background:var(--mark);color:#14211c;padding:0 6px;border-radius:3px}
+nav ul{display:flex;gap:20px;list-style:none;margin:0;padding:0;font-weight:500;font-size:15px;flex-wrap:wrap}
+nav a{color:var(--ink);text-decoration:none}nav a:hover{color:var(--green)}
+.hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:48px;align-items:center;padding-block:40px 72px}
+@media (max-width:860px){.hero{grid-template-columns:minmax(0,1fr);gap:32px}}
+.eyebrow{font-family:var(--f-mono);font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--green)}
+h1{font-family:var(--f-display);font-weight:800;font-size:clamp(40px,6.2vw,72px);line-height:1;letter-spacing:-.035em;margin:14px 0 20px;text-wrap:balance}
+h1 em{font-style:normal;background:linear-gradient(transparent 62%,var(--mark) 62%)}
+.lead{font-size:19px;color:var(--soft);max-width:34em;margin:0 0 28px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:13px 20px;border-radius:6px;text-decoration:none;border:2px solid var(--ink);cursor:pointer;font:600 16px var(--f-body)}
+.btn.main{background:var(--ink);color:var(--paper)}.btn.alt{background:transparent;color:var(--ink)}
+.check{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:22px;font-family:var(--f-mono);font-size:14px;box-shadow:0 18px 40px -24px rgba(20,33,28,.35);min-width:0}
+.check h3{font-family:var(--f-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);margin:0 0 14px;display:flex;justify-content:space-between;gap:8px}
+.item{display:grid;grid-template-columns:22px minmax(0,1fr);gap:10px;padding:9px 0;border-top:1px dashed var(--line)}
+.item b{font-weight:500}.item small{display:block;color:var(--soft);font-size:12.5px}
+.x{color:var(--red);font-weight:700}.ok{color:var(--green);font-weight:700}
+.score{display:flex;align-items:center;gap:12px;margin-top:14px;padding-top:14px;border-top:1px solid var(--line)}
+.bar{flex:1;height:8px;background:var(--line);border-radius:4px;overflow:hidden}
+.bar i{display:block;height:100%;width:42%;background:var(--red);transition:width .8s ease,background .8s}
+.check.fixed .bar i{width:94%;background:var(--green)}
+.toggle{margin-top:14px;font:500 13px var(--f-mono);background:var(--mark);color:#14211c;border:none;border-radius:4px;padding:8px 12px;cursor:pointer}
+section{padding-block:64px;border-top:1px solid var(--line)}
+h2{font-family:var(--f-display);font-weight:700;font-size:clamp(28px,3.6vw,40px);letter-spacing:-.025em;line-height:1.1;margin:0 0 12px}
+.sub{color:var(--soft);margin:0 0 36px;max-width:40em}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+@media (max-width:860px){.grid3{grid-template-columns:minmax(0,1fr)}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:24px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.card h3{font-family:var(--f-display);font-size:22px;margin:0}.card p{margin:0;color:var(--soft);font-size:16px}
+.price{font-family:var(--f-mono);font-size:14px;margin-top:auto;padding-top:10px;border-top:1px solid var(--line)}
+.price strong{font-size:22px;font-family:var(--f-display)}
+.card.hl{border:2px solid var(--green)}
+.tag{align-self:flex-start;font:500 11px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;background:var(--mark);color:#14211c;padding:3px 8px;border-radius:3px}
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;counter-reset:s;list-style:none;padding:0;margin:0}
+@media (max-width:860px){.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:480px){.steps{grid-template-columns:minmax(0,1fr)}}
+.steps li{counter-increment:s}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--ink);color:var(--paper);font:700 17px var(--f-display);margin-bottom:12px}
+.steps b{display:block;font-size:18px;margin-bottom:4px}.steps span{color:var(--soft);font-size:15.5px}
+.why{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 32px;list-style:none;padding:0;margin:0}
+@media (max-width:640px){.why{grid-template-columns:minmax(0,1fr)}}
+.why li{padding-left:28px;position:relative}.why li::before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:700}
+.contact{background:var(--ink);color:var(--paper);border-radius:14px;padding:40px;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:28px;align-items:center}
+@media (max-width:760px){.contact{grid-template-columns:minmax(0,1fr);padding:28px}}
+.contact h2{color:var(--paper)}.contact p{color:var(--paper);opacity:.8;margin:0}
+.mail{font-family:var(--f-mono);font-size:18px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:6px;padding:14px;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;overflow-wrap:anywhere}
+.mail a{color:var(--mark)}
+footer{padding-block:36px;color:var(--soft);font-size:14px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+</style></head><body>
+<div class="w">
+<nav><div class="logo">Giuli <span>Web</span> Studio</div>
+<ul><li><a href="#angebot">Angebot</a></li><li><a href="#ablauf">Ablauf</a></li><li><a href="#kontakt">Kontakt</a></li></ul></nav>
+<header class="hero"><div>
+<div class="eyebrow">Winterthur · Zürich</div>
+<h1>Ihre Website, <em>einfach besser.</em></h1>
+<p class="lead">Ich helfe kleinen Betrieben in der Region, online besser gefunden zu werden: Fehler beheben, Inhalte auffrischen oder eine neue, moderne Website bauen. Persönlich, schnell und zu fairen Preisen.</p>
+<div class="cta"><a class="btn main" href="#kontakt">Kostenlosen Website-Check anfragen</a><a class="btn alt" href="#angebot">Angebot ansehen</a></div></div>
+<div class="check" id="check">
+<h3><span>Website-Check · Beispiel</span><span id="state">vorher</span></h3>
+<div class="item"><span class="x" data-f>✗</span><div><b>Keine Adresse auf der Seite</b><small>Google und neue Kunden finden den Betrieb schlechter</small></div></div>
+<div class="item"><span class="x" data-f>✗</span><div><b>Kein „Offerte anfragen“-Knopf</b><small>Interessierte springen ab, statt sich zu melden</small></div></div>
+<div class="item"><span class="x" data-f>✗</span><div><b>Tippfehler &amp; leere Bereiche</b><small>wirkt unfertig und kostet Vertrauen</small></div></div>
+<div class="item"><span class="ok">✓</span><div><b>Funktioniert auf dem Handy</b><small>passt bereits</small></div></div>
+<div class="score"><span>Eindruck</span><div class="bar"><i></i></div><span id="pct">42%</span></div>
+<button class="toggle" id="fix" type="button">Nachher anzeigen</button></div>
+</header></div>
+<section id="angebot"><div class="w"><h2>Was ich für Sie mache</h2>
+<p class="sub">Sie zahlen nur, was Sie wirklich brauchen. Vor jedem Auftrag bekommen Sie eine klare Übersicht mit festem Preis.</p>
+<div class="grid3">
+<div class="card"><h3>Website-Check</h3><p>Ich schaue mir Ihre Website genau an und schicke Ihnen eine verständliche Liste: was gut ist, was fehlt und was Kunden stört.</p><div class="price"><strong>gratis</strong></div></div>
+<div class="card hl"><span class="tag">Beliebt</span><h3>Verbesserungen</h3><p>Fehler korrigieren, Adresse und Öffnungszeiten ergänzen, Kontakt-Knopf einbauen, Google-Beschreibung verbessern.</p><div class="price">ab <strong>CHF 150</strong></div></div>
+<div class="card"><h3>Neue Website</h3><p>Eine moderne, schnelle Website mit bis zu 5 Seiten, die auf dem Handy perfekt aussieht – inklusive Texte und Google-Grundlagen.</p><div class="price">ab <strong>CHF 600</strong></div></div>
+</div></div></section>
+<section id="ablauf"><div class="w"><h2>So läuft es ab</h2><p class="sub">Unkompliziert und ohne Fachchinesisch.</p>
+<ol class="steps">
+<li><b>Kurze Nachricht</b><span>Sie schreiben mir, worum es geht.</span></li>
+<li><b>Gratis-Check</b><span>Ich prüfe Ihre Seite und schicke Ihnen eine Übersicht mit Preis.</span></li>
+<li><b>Umsetzung</b><span>Nach Ihrem OK setze ich alles um, meist innerhalb weniger Tage.</span></li>
+<li><b>Fertig</b><span>Sie prüfen das Ergebnis. Bezahlt wird erst, wenn Sie zufrieden sind.</span></li>
+</ol></div></section>
+<section><div class="w"><h2>Warum Giuli Web Studio</h2><ul class="why">
+<li>Aus der Region – ich kenne Winterthur und Zürich</li><li>Ein fester Ansprechpartner statt einer grossen Agentur</li>
+<li>Klare Preise vorab, keine versteckten Kosten</li><li>Bezahlung erst nach Ihrer Freigabe</li></ul></div></section>
+<section id="kontakt" style="border-top:none"><div class="w"><div class="contact">
+<div><h2>Kostenlosen Check anfragen</h2><p>Schreiben Sie mir den Namen Ihres Betriebs oder Ihre Web-Adresse. Ich melde mich innerhalb von 1–2 Tagen.</p></div>
+<div class="mail"><a href="mailto:setride3@gmail.com">setride3@gmail.com</a></div>
+</div></div></section>
+<div class="w"><footer><span>© 2026 Giuli Web Studio · Winterthur</span><span>Websites für kleine Betriebe</span></footer></div>
+<script>
+(function(){var c=document.getElementById("check"),b=document.getElementById("fix"),p=document.getElementById("pct"),s=document.getElementById("state");
+b.addEventListener("click",function(){var on=!c.classList.contains("fixed");c.classList.toggle("fixed",on);
+c.querySelectorAll("[data-f]").forEach(function(e){e.textContent=on?"✓":"✗";e.className=on?"ok":"x";});
+p.textContent=on?"94%":"42%";s.textContent=on?"nachher":"vorher";b.textContent=on?"Vorher anzeigen":"Nachher anzeigen";});})();
+</script>
+</body></html>
